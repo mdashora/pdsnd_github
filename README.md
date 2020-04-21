@@ -1,5 +1,5 @@
 ### Date created
-Include the date you created this project and README file.
+This project was first created on April 17th, 2020 and after a few days moved to version control with README file on April 21st, 2020.
 
 ### Project Title
 Replace the Project Title
