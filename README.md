@@ -9,8 +9,15 @@ Over the past decade, bicycle-sharing systems have been growing in number and po
 This project compares the system usage between three large cities: Chicago, New York City, and Washington, DC and helps user to get insights.
 
 ### Files used
-Include the files used
+* bikeshare.py
+* chicago.csv
+* new_york_city.csv
+* washington.csv
 
-### Credits
-It's important to give proper credit. Add links to any repo that inspired you or blogposts you consulted.
+### Refrences
+* Python documentation
+* Pandas documentation
+* Udacity classroom reosurces
+* http://www.datasciencemadesimple.com
+* https://www.w3resource.com/python-exercises
 
