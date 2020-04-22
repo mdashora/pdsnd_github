@@ -270,6 +270,9 @@ def display_raw_data(df):
             continue
 
 def main():
+    """
+    This is the main function where script starts execution.
+    """    
     while True:
         city, month, day = get_filters()
         df = load_data(city, month, day)
