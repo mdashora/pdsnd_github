@@ -29,7 +29,7 @@ def get_filters():
         if city_number in range(1, len(city_list)+1):        
             break
         else:
-            print("Sorry, I coundn't uderstand that. Please try again.")
+            print("Sorry, I couldn’t understand that. Please try again.")
             continue
 
     city = city_list[city_number - 1]
@@ -45,7 +45,7 @@ def get_filters():
         if month_number in range(0, len(month_list)):        
             break
         else:
-            print("Sorry, I coundn't uderstand that. Please try again.")
+            print("Sorry, I couldn’t understand that. Please try again.")
             continue
 
     month = month_list[month_number]    
@@ -62,7 +62,7 @@ def get_filters():
         if day_number in range(0, len(day_list)):        
             break
         else:
-            print("Sorry, I coundn't uderstand that. Please try again.")
+            print("Sorry, I couldn’t understand that. Please try again.")
             continue
 
     day = day_list[day_number]
@@ -149,8 +149,8 @@ def station_stats(df):
 
     # TO DO: display most frequent combination of start station and end station trip
     combination = df.groupby(['Start Station', 'End Station'])    
-    most_frequest_trip = combination['Trip Duration'].count().idxmax()
-    print("Most frequest combination of start station and end station trip:", most_frequest_trip[0], " & ", most_frequest_trip[1])
+    most_frequent_trip = combination['Trip Duration'].count().idxmax()
+    print("Most frequent combination of start station and end station trip:", most_frequent_trip[0], " & ", most_frequent_trip[1])
 
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*80)
@@ -266,7 +266,7 @@ def display_raw_data(df):
         elif raw_data.lower() == 'no':
             break
         else:
-            print("Sorry, I coundn't uderstand that. Please try again.")
+            print("Sorry, I couldn’t understand that. Please try again.")
             continue
 
 def main():
