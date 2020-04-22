@@ -226,17 +226,19 @@ def convert_seconds(seconds):
     Returns:
         (str) converted_time - number days, hours, minutes, and seconds
     """
-
-    time = seconds
-    day = time // (24 * 3600)
-    time = time % (24 * 3600)
-    hour = time // 3600
-    time %= 3600
-    minutes = time // 60
-    time %= 60
-    seconds = time
-    converted_time = "{} day, {} hour, {} minutes, {} seconds".format(day, hour, minutes, seconds)
-    
+    try:
+        time = seconds
+        day = time // (24 * 3600)
+        time = time % (24 * 3600)
+        hour = time // 3600
+        time %= 3600
+        minutes = time // 60
+        time %= 60
+        seconds = time
+        converted_time = "{} day, {} hour, {} minutes, {} seconds".format(day, hour, minutes, seconds)
+    except:
+        print("\nError: Could not convert seconds to timeline string")
+        
     return converted_time
 
 def display_raw_data(df):
