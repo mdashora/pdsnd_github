@@ -29,7 +29,7 @@ def get_filters():
         if city_number in range(1, len(city_list)+1):        
             break
         else:
-            print("Sorry, I coundn't uderstand that. Please try again.")
+            print("Sorry, I couldn’t understand that. Please try again.")
             continue
 
     city = city_list[city_number - 1]
@@ -45,7 +45,7 @@ def get_filters():
         if month_number in range(0, len(month_list)):        
             break
         else:
-            print("Sorry, I coundn't uderstand that. Please try again.")
+            print("Sorry, I couldn’t understand that. Please try again.")
             continue
 
     month = month_list[month_number]    
@@ -62,7 +62,7 @@ def get_filters():
         if day_number in range(0, len(day_list)):        
             break
         else:
-            print("Sorry, I coundn't uderstand that. Please try again.")
+            print("Sorry, I couldn’t understand that. Please try again.")
             continue
 
     day = day_list[day_number]
@@ -149,8 +149,8 @@ def station_stats(df):
 
     # TO DO: display most frequent combination of start station and end station trip
     combination = df.groupby(['Start Station', 'End Station'])    
-    most_frequest_trip = combination['Trip Duration'].count().idxmax()
-    print("Most frequest combination of start station and end station trip:", most_frequest_trip[0], " & ", most_frequest_trip[1])
+    most_frequent_trip = combination['Trip Duration'].count().idxmax()
+    print("Most frequent combination of start station and end station trip:", most_frequent_trip[0], " & ", most_frequent_trip[1])
 
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*80)
@@ -229,17 +229,19 @@ def convert_seconds(seconds):
     Returns:
         (str) converted_time - number days, hours, minutes, and seconds
     """
-
-    time = seconds
-    day = time // (24 * 3600)
-    time = time % (24 * 3600)
-    hour = time // 3600
-    time %= 3600
-    minutes = time // 60
-    time %= 60
-    seconds = time
-    converted_time = "{} day, {} hour, {} minutes, {} seconds".format(day, hour, minutes, seconds)
-    
+    try:
+        time = seconds
+        day = time // (24 * 3600)
+        time = time % (24 * 3600)
+        hour = time // 3600
+        time %= 3600
+        minutes = time // 60
+        time %= 60
+        seconds = time
+        converted_time = "{} day, {} hour, {} minutes, {} seconds".format(day, hour, minutes, seconds)
+    except:
+        print("\nError: Could not convert seconds to timeline string")
+        
     return converted_time
 
 def display_raw_data(df):
@@ -269,7 +271,7 @@ def display_raw_data(df):
         elif raw_data.lower() == 'no':
             break
         else:
-            print("Sorry, I coundn't uderstand that. Please try again.")
+            print("Sorry, I couldn’t understand that. Please try again.")
             continue
 
 def main():
@@ -286,7 +288,7 @@ def main():
         user_stats(df)
         display_raw_data(df)
         
-        restart = input("\nWould you like to restart?\nEnter yes to continue and anything else to exit.\n")
+        restart = input("\nWould you like to restart?\nEnter yes to continue and any other key to exit.\n")
         if restart.lower() != 'yes':
             break
 
